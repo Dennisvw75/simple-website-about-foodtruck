@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* fontsize at 10px */
+  font-size: 62.5%;
+}
+
+body {
+  background: #111;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+.header {
+  position: relative;
+}
+
+.nav {
+  position: relative;
+  width: 100%;
+  z-index: 8;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+}
+.nav__logo {
+  z-index: 8;
+
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.nav__list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.nav__item {
+  flex: 0 0 auto;
+  padding: 0px 20px;
+}
+.nav__item:nth-child(1) {
+  margin-right: auto;
+}
+
+.nav__link {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 2px;
+  padding: 1.5rem 0;
+  text-decoration: none;
+}
+.video-container {
+  position: relative;
+}
+.video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.video-overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  /* background: rgba(0, 0, 0, 0.7); */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+}
+.header__content {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  color: #fff;
+}
+
+.header__title {
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: justify;
+  animation-name: enterFromLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}
+
+.header__sub-title {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-align: justify;
+  animation-name: enterFromLeft;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+}
+.header__text {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: justify;
+  animation-name: enterFromLeft;
+  animation-duration: 2.5s;
+  animation-timing-function: ease;
+}
+.header__text-first {
+  display: inline-block;
+  margin-bottom: 2rem;
+  /* font-weight: 700; */
+}
+.header__text-second {
+  display: inline-block;
+  margin-bottom: 2rem;
+  /* font-weight: 700; */
+}
+.header__cta {
+  display: block;
+  padding: 1.5rem 4rem;
+  font-family: inherit;
+  font-size: 1.9rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  animation-name: enterFromLeft;
+  animation-duration: 3.5s;
+  animation-timing-function: ease;
+  transition: all 0.3s ease;
+}
+.header__cta:hover {
+  color: #fff;
+  background: #000;
+}
+
+@keyframes enterFromLeft {
+  0% {
+    transform: translateX(-900px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
