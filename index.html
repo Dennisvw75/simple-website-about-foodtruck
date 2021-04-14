@@ -13,6 +13,7 @@
     <title>FoodTruck Truckie</title>
   </head>
   <body>
+    <!-- Header -->
     <header class="header">
       <nav class="nav">
         <ul class="nav__list">
@@ -33,28 +34,70 @@
           </li>
         </ul>
       </nav>
-      <div class="video-container">
-        <video autoplay loop class="video">
-          <source
-            src="images/food-truck-1080p.mp4"
-            type="video/mp4"
-            class="video-food"
-          />
-        </video>
-        <div class="video-overlay"></div>
-      </div>
-      <div class="header__content">
-        <h1 class="header__title">Welcome to Truckie</h1>
-        <h2 class="header__sub-title">My name is Jessica</h2>
-        <p class="header__text">
-          <span class="header__text-first"
-            >Your choice for the best food truck in town!</span
-          ><br />
-          <span class="header__text-second">You want to find out more?</span>
-        </p>
-        <button class="header__cta">CLick Here</button>
-      </div>
-      <!-- </div> -->
     </header>
+    <div class="video-container">
+      <video autoplay loop class="video">
+        <source
+          src="images/food-truck-1080p.mp4"
+          type="video/mp4"
+          class="video-food"
+        />
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="header__content">
+      <h1 class="header__title">Welcome to Truckie</h1>
+      <h2 class="header__sub-title">My name is Jessica</h2>
+      <p class="header__text">
+        <span class="header__text-first"
+          >Your choice for the best food truck in town!</span
+        ><br />
+        <span class="header__text-second">You want to find out more?</span>
+      </p>
+      <button class="header__cta">CLick Here</button>
+    </div>
+
+    <!-- Section About -->
+    <section class="about" id="about">
+      <main>
+        <div class="about__image-container image-container-1">
+          <img
+            class="about__img-1"
+            src="/images/image-6-small.jpg"
+            alt="Jessica, food truck owner"
+            srcset="/images/image-6-small.jpg 426w, images/image-6.jpg 1280w"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          />
+        </div>
+        <div class="about__image-container image-container-2">
+          <img
+            class="about__img-2"
+            src="/images/image-2-small.jpg"
+            alt="Jessica, food truck owner"
+            srcset="/images/image-2-small.jpg 426w, images/image-2.jpg 1280w"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          />
+        </div>
+
+        <div class="about__about-me about-me-container-1">
+          <h2 class="about__title">So, I am Jessica</h2>
+          <p class="about__text">
+            Are you looking for a beautiful food truck that makes delicious food
+            and drinks?Then you are in the right place! Trickie is the food and
+            drink caterer for festivals, events, fairs and more.
+          </p>
+        </div>
+        <div class="about__about-me about-me-container-2">
+          <h2 class="about__title">And this is Truckie!</h2>
+          <p class="about__text">
+            With our food and drinks Truckie will be at festivals, outlets or
+            counters, we serve fresh homemade pasta or pizza at any location.
+            Complete your event or party with our food Truckie and let your
+            guests enjoy the delicious Italian food we have to offer. We are
+            happy to come to you!
+          </p>
+        </div>
+      </main>
+    </section>
   </body>
 </html>

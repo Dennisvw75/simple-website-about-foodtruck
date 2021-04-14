@@ -10,9 +10,13 @@ html {
 }
 
 body {
-  background: #111;
+  min-height: 100vh;
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
+  margin: 0 auto;
+  max-width: 1024px;
+
+  background-color: rgb(39, 39, 38);
 }
 
 .header {
@@ -20,16 +24,14 @@ body {
 }
 
 .nav {
-  position: relative;
+  position: absolute;
   width: 100%;
-  z-index: 8;
+  z-index: 120;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(0, 0, 0, 0.7);
 }
 .nav__logo {
-  z-index: 8;
-
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 3px;
@@ -55,45 +57,51 @@ body {
   letter-spacing: 2px;
   padding: 1.5rem 0;
   text-decoration: none;
+  transition: background 0.3s ease;
+}
+.nav__link:hover {
+  background: #000;
 }
 .video-container {
   position: relative;
 }
 .video {
   object-fit: cover;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  position: fixed;
+  /* position: relative;
   top: 0;
-  left: 0;
+  left: 0; */
 }
 .video-overlay {
   position: absolute;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
-  /* background: rgba(0, 0, 0, 0.7); */
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 4;
+  z-index: 100;
 }
 .header__content {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 90;
+  z-index: 110;
   color: #fff;
 }
 
 .header__title {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 300;
   letter-spacing: 2px;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   color: white;
   text-align: justify;
   animation-name: enterFromLeft;
@@ -102,22 +110,23 @@ body {
 }
 
 .header__sub-title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 300;
   letter-spacing: 2px;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   text-align: justify;
-  animation-name: enterFromLeft;
-  animation-duration: 1.5s;
+  animation-name: enterFromRight;
+  animation-duration: 0.5s;
   animation-timing-function: ease;
 }
 .header__text {
   font-size: 2rem;
   font-weight: 400;
+  margin-bottom: 4rem;
   letter-spacing: 2px;
-  text-align: justify;
+  text-align: center;
   animation-name: enterFromLeft;
-  animation-duration: 2.5s;
+  animation-duration: 2s;
   animation-timing-function: ease;
 }
 .header__text-first {
@@ -127,8 +136,6 @@ body {
 }
 .header__text-second {
   display: inline-block;
-  margin-bottom: 2rem;
-  /* font-weight: 700; */
 }
 .header__cta {
   display: block;
@@ -138,8 +145,8 @@ body {
   font-weight: 700;
   border: none;
   cursor: pointer;
-  animation-name: enterFromLeft;
-  animation-duration: 3.5s;
+  animation-name: enterFromRight;
+  animation-duration: 2s;
   animation-timing-function: ease;
   transition: all 0.3s ease;
 }
@@ -148,9 +155,72 @@ body {
   background: #000;
 }
 
+/* About Section */
+.about {
+  background: linear-gradient(rgb(60, 63, 65), rgb(151, 133, 133));
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+}
+main {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 0 2rem;
+}
+.image-container-1 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.image-container-2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.about__image-container .about__img-1,
+.about__img-2 {
+  max-width: 100%;
+  filter: drop-shadow(8px 8px 10px #fff);
+  border-radius: 20px;
+  background-size: cover;
+}
+
+.about__about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 3rem;
+}
+.about__about-me .about__title {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.about__about-me .about__text {
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+.about__about-me .about__text::first-letter {
+  font-size: 3rem;
+}
+
 @keyframes enterFromLeft {
   0% {
     transform: translateX(-900px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes enterFromRight {
+  0% {
+    transform: translateX(900px);
     opacity: 0;
   }
   100% {
