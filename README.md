@@ -1,3 +1,3 @@
 # A simple website about a food truck.
 
-## Using responsive images.
+## Using responsive images, transitions
